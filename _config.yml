@@ -10,9 +10,8 @@ collections:
     output: true
 email: email-address@example.com
 description: Jacqui Parker, artist, Brighton, UK.
-baseurl: ''
-url: ''
-twitter_username: jekyllrb
+baseurl: 
+url: 
 github_username: HarryFischer
 theme: minima
 plugins:
