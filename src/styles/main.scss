@@ -1,0 +1,42 @@
+@import "mq";
+
+h1,
+h2,
+h3,
+p,
+a,
+i,
+em {
+	font-size: 16px;
+	line-height: 130%;
+}
+h2 a {
+	display: block;
+	& + p {
+		color: grey;
+	}
+}
+
+h1 {
+	font-size: 50px;
+	position: sticky;
+	top: 0;
+	.site-logo {
+		max-width: 80%;
+	}
+	span {
+		opacity: 0;
+		display: block;
+		height: 0;
+	}
+}
+
+.artworks-wrapper {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	padding: 0 20px;
+	.artwork-item {
+		width: 33%;
+	}
+}

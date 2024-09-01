@@ -1,0 +1,48 @@
+{
+  "id": "artwork",
+  "type": "SharedSlice",
+  "name": "Artwork",
+  "description": "Artwork",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "artwork_image": {
+          "type": "Image",
+          "config": {
+            "label": "Artwork image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "date": {
+          "type": "Text",
+          "config": {
+            "label": "Date",
+            "placeholder": ""
+          }
+        },
+        "price": {
+          "type": "Text",
+          "config": {
+            "label": "Price",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
