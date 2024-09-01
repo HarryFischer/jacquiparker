@@ -40,6 +40,8 @@ h1 {
 		flex-direction: row;
 	}
 	.artwork-item {
-		width: 33%;
+		@include mq(desktop) {
+			width: 33%;
+		}
 	}
 }
