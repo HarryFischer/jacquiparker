@@ -33,9 +33,12 @@ h1 {
 
 .artworks-wrapper {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	gap: 20px;
 	padding: 0 20px;
+	@include mq(desktop) {
+		flex-direction: row;
+	}
 	.artwork-item {
 		width: 33%;
 	}
