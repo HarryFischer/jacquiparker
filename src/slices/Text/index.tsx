@@ -8,17 +8,13 @@ import { PrismicRichText } from "@/components/PrismicRichText";
 type TextProps = SliceComponentProps<Content.TextSlice>;
 
 const Text = ({ slice }: TextProps) => {
-  return (
-    <Bounded as="section" className="bg-white leading-relaxed">
-      <div
-        className={clsx(
-          slice.variation === "twoColumns" && "md:columns-2 md:gap-6",
-        )}
-      >
-        <PrismicRichText field={slice.primary.text} />
-      </div>
-    </Bounded>
-  );
+	return (
+		<section className="text-column">
+			<div>
+				<PrismicRichText field={slice.primary.text} />
+			</div>
+		</section>
+	);
 };
 
 export default Text;

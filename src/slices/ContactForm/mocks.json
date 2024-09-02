@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"formid": {
+				"__TYPE__": "FieldContent",
+				"value": "noise",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

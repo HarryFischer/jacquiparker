@@ -8,20 +8,17 @@ import { Bounded } from "@/components/Bounded";
 type ImageProps = SliceComponentProps<Content.ImageSlice>;
 
 const Image = ({ slice, index }: ImageProps) => {
-  const image = slice.primary.image;
+	const image = slice.primary.image;
 
-  return (
-    <Bounded
-      as="section"
-      className={clsx("bg-white", index === 0 && "pt-0 md:pt-0")}
-    >
-      {isFilled.image(image) && (
-        <div className="bg-gray-100">
-          <PrismicNextImage field={image} sizes="100vw" className="w-full" />
-        </div>
-      )}
-    </Bounded>
-  );
+	return (
+		<section className="left-column">
+			{isFilled.image(image) && (
+				<div className="bg-gray-100">
+					<PrismicNextImage field={image} sizes="100vw" className="w-full" />
+				</div>
+			)}
+		</section>
+	);
 };
 
 export default Image;

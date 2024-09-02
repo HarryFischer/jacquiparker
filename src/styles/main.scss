@@ -45,3 +45,39 @@ h1 {
 		}
 	}
 }
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	input,
+	textarea,
+	button {
+		border: 1px solid #dcdcdc;
+		padding: 4px;
+	}
+	button {
+		border-radius: 4px;
+		max-width: 100px;
+	}
+}
+
+.four-column-grid {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	display: grid;
+	grid-template-areas: "middle" "left";
+	grid-template-rows: auto auto auto;
+	.left-column {
+		grid-column: left;
+	}
+	.middle-column,
+	.text-column {
+		grid-column: middle;
+	}
+	@include mq(desktop) {
+		grid-template-columns: 50% 25% 25%;
+		grid-template-areas: "left middle right";
+		gap: 20px;
+	}
+}
