@@ -2,7 +2,6 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 import Contact from "@/components/Form";
-import { Bounded } from "@/components/Bounded";
 
 /**
  * Props for `ContactForm`.
@@ -19,6 +18,10 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
 			data-slice-variation={slice.variation}
 			className="middle-column"
 		>
+			<p>
+				For more information or purchase enquiries please get in touch using the
+				form below
+			</p>
 			<Contact />
 		</section>
 	);

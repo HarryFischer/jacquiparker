@@ -266,6 +266,16 @@ export type ArtworkSlice = prismic.SharedSlice<
  */
 export interface ContactFormSliceDefaultPrimary {
   /**
+   * Text field in *ContactForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
    * formID field in *ContactForm → Default → Primary*
    *
    * - **Field Type**: Text

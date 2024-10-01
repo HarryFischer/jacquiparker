@@ -66,6 +66,9 @@ h1 {
 	.middle-column,
 	.text-column {
 		grid-column: middle;
+		p {
+			margin-bottom: 14px;
+		}
 	}
 	.text-column {
 		@include mq($until: desktop) {
