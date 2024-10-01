@@ -407,37 +407,9 @@ export type ImageSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Image → Banner → Primary*
- */
-export interface ImageSliceBannerPrimary {
-  /**
-   * Image field in *Image → Banner → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: image.banner.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Banner variation for Image Slice
- *
- * - **API ID**: `banner`
- * - **Description**: Image
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ImageSliceBanner = prismic.SharedSliceVariation<
-  "banner",
-  Simplify<ImageSliceBannerPrimary>,
-  never
->;
-
-/**
  * Slice variation for *Image*
  */
-type ImageSliceVariation = ImageSliceDefault | ImageSliceBanner;
+type ImageSliceVariation = ImageSliceDefault;
 
 /**
  * Image Shared Slice
@@ -863,10 +835,8 @@ declare module "@prismicio/client" {
       HeroSliceDefault,
       ImageSlice,
       ImageSliceDefaultPrimary,
-      ImageSliceBannerPrimary,
       ImageSliceVariation,
       ImageSliceDefault,
-      ImageSliceBanner,
       ImageCardsSlice,
       ImageCardsSliceDefaultPrimaryCardsItem,
       ImageCardsSliceDefaultPrimary,

@@ -2,6 +2,13 @@
 export default function Contact() {
 	async function handleSubmit(event) {
 		event.preventDefault();
+		const formElement = document.getElementById("contact-form");
+		console.log(formElement);
+		const thankYou = document.createElement("div");
+		thankYou.innerHTML =
+			"Thank you for your message — I will get back to you soon.";
+		thankYou.classList.add("thank-you");
+		formElement.appendChild(thankYou);
 		const formData = new FormData(event.target);
 
 		formData.append("access_key", "8d3dd3a4-5727-415a-be48-8a84a1adbaf5");
@@ -25,10 +32,14 @@ export default function Contact() {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit} className="contact-form">
-				<input type="text" name="name" placeholder="Name" />
-				<input type="email" name="email" placeholder="email address" />
-				<textarea name="message" placeholder="Type message here"></textarea>
+			<form onSubmit={handleSubmit} className="contact-form" id="contact-form">
+				<input type="text" name="name" required placeholder="Name" />
+				<input type="email" name="email" required placeholder="Email address" />
+				<textarea
+					name="message"
+					required
+					placeholder="Type message here"
+				></textarea>
 				<button type="submit">Submit</button>
 			</form>
 		</>

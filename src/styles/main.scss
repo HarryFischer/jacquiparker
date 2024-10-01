@@ -46,38 +46,57 @@ h1 {
 	}
 }
 
-.contact-form {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	input,
-	textarea,
-	button {
-		border: 1px solid #dcdcdc;
-		padding: 4px;
-	}
-	button {
-		border-radius: 4px;
-		max-width: 100px;
-	}
-}
-
 .four-column-grid {
+	display: flex;
+	flex-direction: column-reverse;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
-	display: grid;
-	grid-template-areas: "middle" "left";
-	grid-template-rows: auto auto auto;
+	@include mq(desktop) {
+		display: grid;
+		grid-template-columns: 50% 25% 25%;
+		grid-template-areas: "left middle right";
+		gap: 20px;
+	}
 	.left-column {
 		grid-column: left;
+		@include mq($until: desktop) {
+			margin-bottom: 100px;
+		}
 	}
 	.middle-column,
 	.text-column {
 		grid-column: middle;
 	}
-	@include mq(desktop) {
-		grid-template-columns: 50% 25% 25%;
-		grid-template-areas: "left middle right";
-		gap: 20px;
+	.text-column {
+		@include mq($until: desktop) {
+			margin-top: 10px;
+		}
+	}
+}
+.contact-form {
+	gap: 20px;
+	position: relative;
+	margin: 20px 0px 40px;
+	input,
+	textarea,
+	button {
+		width: 100%;
+		border: 1px solid #dcdcdc;
+		padding: 4px;
+		margin-bottom: 8px;
+	}
+	button {
+		border-radius: 4px;
+		max-width: 100px;
+	}
+
+	div.thank-you {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: white;
+		border: 1px solid #dcdcdc;
 	}
 }
