@@ -18,9 +18,8 @@ const Artwork = ({ slice }: ArtworkProps): JSX.Element => {
 			data-slice-variation={slice.variation}
 		>
 			<PrismicNextImage field={slice.primary.artwork_image} />
-			<p>
-				{slice.primary.title}, {slice.primary.date}
-			</p>
+			<p>{slice.primary.title}</p>
+			<p>{slice.primary.date}</p>
 			<p>{slice.primary.price}</p>
 		</section>
 	);
