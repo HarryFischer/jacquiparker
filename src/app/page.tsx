@@ -27,6 +27,9 @@ export default async function Page() {
 	return (
 		<div className="artworks-wrapper">
 			<SliceZone slices={page.data.slices} components={components} />
+			<p className="contact-message">
+				For purchase enquiries please <a href="/contact">get in touch here</a>
+			</p>
 		</div>
 	);
 }
