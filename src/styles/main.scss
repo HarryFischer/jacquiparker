@@ -42,12 +42,19 @@ h1 {
 		flex-wrap: wrap;
 	}
 	.artwork-item {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		img {
-			margin-bottom: 4px;
+			margin: auto;
+			// margin-bottom: 4px;
 		}
 		@include mq(desktop) {
 			width: calc(33% - 10px);
 		}
+	}
+	div {
+		padding-top: 4px;
 	}
 }
 
