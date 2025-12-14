@@ -11,12 +11,12 @@ type Params = { uid: string };
 export async function generateMetadata({
 	params,
 }: {
-	params: Params;
+	params: Promise<Params>;
 }): Promise<Metadata> {
+	const { uid } = await params;
+
 	const client = createClient();
-	const page = await client
-		.getByUID("page", params.uid)
-		.catch(() => notFound());
+	const page = await client.getByUID("page", uid).catch(() => notFound());
 
 	return {
 		title: asText(page.data.title),
@@ -28,11 +28,11 @@ export async function generateMetadata({
 	};
 }
 
-export default async function Page({ params }: { params: Params }) {
+export default async function Page({ params }: { params: Promise<Params> }) {
+	const { uid } = await params;
+
 	const client = createClient();
-	const page = await client
-		.getByUID("page", params.uid)
-		.catch(() => notFound());
+	const page = await client.getByUID("page", uid).catch(() => notFound());
 
 	return (
 		<div className="four-column-grid">
@@ -41,12 +41,9 @@ export default async function Page({ params }: { params: Params }) {
 	);
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Params[]> {
 	const client = createClient();
-
 	const pages = await client.getAllByType("page");
 
-	return pages.map((page) => {
-		return { uid: page.uid };
-	});
+	return pages.filter((page) => page.uid).map((page) => ({ uid: page.uid! }));
 }
